@@ -1,0 +1,72 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>org.springframework.boot</groupId>
+    <artifactId>spring-boot-starter-parent</artifactId>
+    <version>1.4.0.RELEASE</version>
+  </parent>
+  <groupId>com.my.app</groupId>
+  <artifactId>MySpringBootApp</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>myapp</name>
+  <description>sample spring boot app</description>
+
+	<dependencies>
+		<!-- 	used for health monitoring /actuator and /health or /info are examples; /mappings lists all endpoints -->
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-actuator</artifactId>
+	    </dependency>	
+
+		<!-- slaps security (default=BasicAuthentication) -->
+		<dependency>
+		  <groupId>org.springframework.boot</groupId>
+		  <artifactId>spring-boot-starter-security</artifactId>
+		</dependency>
+		
+	    <dependency>
+	        <groupId>org.springframework.boot</groupId>
+	        <artifactId>spring-boot-starter-web</artifactId>
+	    </dependency>
+	    
+		<!-- allows for hypermedia type discovery page  -->
+        <dependency>
+	        <groupId>org.springframework.hateoas</groupId>
+	        <artifactId>spring-hateoas</artifactId>
+	        <version>0.20.0.RELEASE</version>
+	    </dependency>
+
+		<!-- this looks for swagger annotations -->
+		<dependency>
+		    <groupId>io.springfox</groupId>
+		    <artifactId>springfox-swagger2</artifactId>
+		    <version>2.5.0</version>
+		</dependency>
+			    	    
+		<!-- this is so that /swagger-ui.html works -->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>2.5.0</version>
+        </dependency>	    
+        
+	    <dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.4</version>
+			<scope>test</scope>
+		</dependency>
+	    
+	</dependencies>
+	  
+    <!-- Package as an executable jar -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>	  
+	  
+</project>
